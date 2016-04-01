@@ -1,0 +1,2 @@
+# widgets
+JQuery widgets library
