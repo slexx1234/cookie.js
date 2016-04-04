@@ -1,5 +1,5 @@
 /**
- * cookie.js
+ * tasty-cookies
  *
  * @version
  * @author Alex5646 <catia.petrowi4@yandex.ru>

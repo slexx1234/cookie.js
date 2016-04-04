@@ -1,4 +1,4 @@
-cookie.js
+tasty-cookies
 ====================================================
 
 ### Table of contents
@@ -16,8 +16,8 @@ cookie.js
 
 ### Quick start
 
-* Install with [Bower](http://bower.io/): `bower install cookie.js`
-* Install with [npm](https://www.npmjs.com/): `npm install cookie.js`
+* Install with [Bower](http://bower.io/): `bower install tasty-cookies`
+* Install with [npm](https://www.npmjs.com/): `npm install tasty-cookies`
 
 ### Use in jQuery
 
