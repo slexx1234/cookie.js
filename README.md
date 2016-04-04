@@ -3,10 +3,10 @@ tasty-cookies
 
 ### Table of contents
 
-* [Quick start](https://github.com/Alex5646/cookie.js#quick-start)
-* [Use in jQuery](https://github.com/Alex5646/cookie.js#use-in-jquery)
-* [Use in CommonJS/Nodey](https://github.com/Alex5646/cookie.js#use-in-commonjsnode)
-* [API Reference](https://github.com/Alex5646/cookie.js#api-reference)
+* [Quick start](#quick-start)
+* [Use in jQuery](#use-in-jquery)
+* [Use in CommonJS/Nodey](#use-in-commonjsnode)
+* [API Reference](#api-reference)
     * [Cookie.set(key, value, [options])][cookie-set]
     * [Cookie.get(keys...)][cookie-get]
     * [Cookie.remove(keys...)][cookie-remove]
@@ -52,12 +52,12 @@ API Reference
 * [Cookie.all()][cookie-all]
 * [Cookie.clear()][cookie-clear]
 
-[cookie-set]: https://github.com/Alex5646/cookie.js#cookiesetkey-value-options
-[cookie-get]: https://github.com/Alex5646/cookie.js#cookiegetkeys
-[cookie-remove]: https://github.com/Alex5646/cookie.js#cookieremovekeys
-[cookie-keys]: https://github.com/Alex5646/cookie.js#cookiekeys
-[cookie-all]: https://github.com/Alex5646/cookie.js#cookieall
-[cookie-clear]: https://github.com/Alex5646/cookie.js#cookieclear
+[cookie-set]: #cookiesetkey-value-options
+[cookie-get]: #cookiegetkeys
+[cookie-remove]: #cookieremovekeys
+[cookie-keys]: #cookiekeys
+[cookie-all]: #cookieall
+[cookie-clear]: #cookieclear
 
 **Example:**
 
