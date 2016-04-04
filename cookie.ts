@@ -172,4 +172,22 @@ class Cookie {
     public static all(): Object {
         return this.get.apply(this, this.keys());
     }
+
+    /**
+     * Удаление всех cookie
+     *
+     * @method Cookie#clear
+     * @returns {Cookie}
+     * @example
+     * Cookie
+     *   .set({one: 1, two: 2})
+     *   .clear();
+     *
+     * console.log(document.cookie);
+     *
+     * // -> ''
+     */
+    public static clear(): Cookie {
+        return this.remove.apply(this, this.keys());
+    }
 }

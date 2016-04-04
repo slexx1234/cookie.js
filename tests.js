@@ -14,6 +14,7 @@
 
     QUnit.test('get', function (assert) {
         assert.equal(Cookie.get('my_cookie'), 5, 'Получение');
+        assert.equal(Cookie.get('hello'), undefined, 'Получение не существующей');
         assert.deepEqual(Cookie.get('one', 'two'), {one:1, two:2}, 'Получение нескольких');
     });
 
@@ -36,5 +37,11 @@
 
     QUnit.test('all', function (assert) {
         assert.deepEqual(Cookie.all(), {one:1, two:2}, 'Получение всех');
+    });
+
+    QUnit.test('clear', function (assert) {
+        Cookie.clear();
+
+        assert.equal(document.cookie, '', 'Удаление всех');
     });
 })();

@@ -162,6 +162,23 @@ var Cookie = (function () {
     Cookie.all = function () {
         return this.get.apply(this, this.keys());
     };
+    /**
+     * Удаление всех cookie
+     *
+     * @method Cookie#clear
+     * @returns {Cookie}
+     * @example
+     * Cookie
+     *   .set({one: 1, two: 2})
+     *   .clear();
+     *
+     * console.log(document.cookie);
+     *
+     * // -> ''
+     */
+    Cookie.clear = function () {
+        return this.remove.apply(this, this.keys());
+    };
     return Cookie;
 }());
 
