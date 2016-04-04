@@ -1,6 +1,8 @@
 tasty-cookies
 ====================================================
 
+**Language:** [Russian](), English
+
 ### Table of contents
 
 * [Quick start](#quick-start)
