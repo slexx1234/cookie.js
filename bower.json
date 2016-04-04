@@ -1,12 +1,12 @@
 {
-  "name": "widgets",
-  "description": "JQuery widgets library",
-  "main": "index.js",
+  "name": "cookie.js",
+  "description": "Class for cookie",
+  "main": "cookie.js",
   "authors": [
     "Alex5646 <catia.petrowi4@yandex.ru>"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/Alex5646/widgets",
+  "homepage": "https://github.com/Alex5646/cookie.js",
   "moduleType": [],
   "ignore": [
     "**/.*",
