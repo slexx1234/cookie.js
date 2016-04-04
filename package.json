@@ -1,0 +1,30 @@
+{
+  "name": "widgets",
+  "version": "0.0.0",
+  "description": "JQuery widgets library",
+  "main": "index.js",
+  "scripts": {
+    "doc": "jsdoc --configure jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex5646/widgets.git"
+  },
+  "author": "Alex5646 <catia.petrowi4@yandex.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alex5646/widgets/issues"
+  },
+  "homepage": "https://github.com/Alex5646/widgets#readme",
+  "devDependencies": {
+    "docdash": "^0.1.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.12.1",
+    "gulp-uglify": "^1.5.3",
+    "jsdoc": "^3.4.0",
+    "qunitjs": "^1.23.0"
+  }
+}
