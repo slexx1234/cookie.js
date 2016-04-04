@@ -149,6 +149,19 @@ var Cookie = (function () {
         }
         return keys;
     };
+    /**
+     * Получение всех cookie
+     *
+     * @method Cookie#all
+     * @returns {Object}
+     * @example
+     * Cookie.set({one: 1, two: 2});
+     * console.log(Cookie.all());
+     * // -> {one: 1, two: 2}
+     */
+    Cookie.all = function () {
+        return this.get.apply(this, this.keys());
+    };
     return Cookie;
 }());
 

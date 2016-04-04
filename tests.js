@@ -33,4 +33,8 @@
 
         assert.deepEqual(Cookie.keys(), ['one', 'two'], 'Получение ключей');
     });
+
+    QUnit.test('all', function (assert) {
+        assert.deepEqual(Cookie.all(), {one:1, two:2}, 'Получение всех');
+    });
 })();
