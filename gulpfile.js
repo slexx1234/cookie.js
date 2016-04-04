@@ -25,7 +25,7 @@ gulp.task('min', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('./cookie.ts', ['min']);
+    gulp.watch('./cookie.ts', ['js']);
     gulp.watch('./cookie.js', ['min']);
 });
 

@@ -1,7 +1,9 @@
-'use strict';
 /**
- * Class for cookie
+ * cookie.js
  *
+ * @version
+ * @author Alex5646 <catia.petrowi4@yandex.ru>
+ * @link https://github.com/Alex5646/cookie.js
  * @example
  * new Cookie({
  *     string: 'Hello Wold!',
@@ -21,9 +23,9 @@
  * console.log(Cookie.get('object'));
  * // -> {one: 1, two: 2}
  */
-var Cookie = (function () {
-    function Cookie() {
-    }
+var Cookie;
+(function (Cookie) {
+    'use strict';
     /**
      * Set cookies
      *
@@ -50,7 +52,7 @@ var Cookie = (function () {
      * console.log(document.cookie);
      * // -> 'one=1; two=2'
      */
-    Cookie.set = function (key, value, options) {
+    function set(key, value, options) {
         if (options === void 0) { options = {}; }
         if (typeof key === 'object') {
             for (var name in key) {
@@ -71,10 +73,11 @@ var Cookie = (function () {
                 (options.domain ? '; domain=' + options.domain : '') +
                 (options.secure ? '; secure' : '');
         return this;
-    };
+    }
+    Cookie.set = set;
     /**
      * Getting cookies
-
+     *
      * @example
      * Cookie.set('my_cookie', 5);
      * console.log(Cookie.get('my_cookie'));
@@ -84,12 +87,11 @@ var Cookie = (function () {
      * console.log(Cookie.get('my_cookie'));
      * // -> [1, 2, 3]
      *
-     *
      * Cookie.set({one: 1, two: 2});
      * console.log(Cookie.get('one', 'two'));
      * // -> {one: 1, two: 2}
      */
-    Cookie.get = function () {
+    function get() {
         var keys = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             keys[_i - 0] = arguments[_i];
@@ -102,7 +104,8 @@ var Cookie = (function () {
         }
         var resultKeys = Object.keys(result);
         return resultKeys.length == 1 ? result[resultKeys[0]] : result;
-    };
+    }
+    Cookie.get = get;
     /**
      * Remove cookies
      *
@@ -120,7 +123,7 @@ var Cookie = (function () {
      * console.log(document.cookie)
      * // -> ''
      */
-    Cookie.remove = function () {
+    function remove() {
         var keys = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             keys[_i - 0] = arguments[_i];
@@ -130,7 +133,8 @@ var Cookie = (function () {
             this.set(key, '', { expires: -1 });
         }
         return Cookie;
-    };
+    }
+    Cookie.remove = remove;
     /**
      * Getting all keys cookies
      *
@@ -143,14 +147,15 @@ var Cookie = (function () {
      * console.log(Cookie.keys());
      * // -> ['one', 'two']
      */
-    Cookie.keys = function () {
+    function keys() {
         var keys = [];
         for (var _i = 0, _a = document.cookie.split('; '); _i < _a.length; _i++) {
             var cookie = _a[_i];
             keys.push(cookie.split('=')[0]);
         }
         return keys;
-    };
+    }
+    Cookie.keys = keys;
     /**
      * Getting all cookies
      *
@@ -159,9 +164,10 @@ var Cookie = (function () {
      * console.log(Cookie.all());
      * // -> {one: 1, two: 2}
      */
-    Cookie.all = function () {
+    function all() {
         return this.get.apply(this, this.keys());
-    };
+    }
+    Cookie.all = all;
     /**
      * Clear all cookies
      *
@@ -173,30 +179,27 @@ var Cookie = (function () {
      * console.log(document.cookie);
      * // -> ''
      */
-    Cookie.clear = function () {
+    function clear() {
         return this.remove.apply(this, this.keys());
-    };
-    return Cookie;
-}());
-window['Cookie'] = Cookie;
-// jQuery support
-if (typeof window['$'] !== 'undefined') {
-    window['$']['cookie'] = Cookie;
-}
-// AMD support
-if (typeof window['define'] === 'function') {
-    window['define'](function () {
-        return Cookie;
-    });
-}
-// CommonJS/Node.js support
-if (typeof window['exports'] === 'object') {
-    // Support Node.js specific `module.exports` (which can be a function)
-    if (typeof window['module'] === 'object' && typeof window['module'].exports === 'object') {
-        window['exports'] = window['module'].exports = Cookie;
     }
-    // But always support CommonJS module 1.1.1 spec (`exports` cannot be a function)
-    window['exports'].Cookie = Cookie;
-}
+    Cookie.clear = clear;
+    // jQuery support
+    if (typeof window['$'] !== 'undefined') {
+        window['$']['cookie'] = Cookie;
+    }
+    // AMD support
+    if (typeof window['define'] === 'function') {
+        window['define'](function () {
+            return Cookie;
+        });
+    }
+    // CommonJS/Node.js support
+    if (typeof window['exports'] === 'object') {
+        if (typeof window['module'] === 'object' && typeof window['module'].exports === 'object') {
+            window['exports'] = window['module'].exports = Cookie;
+        }
+        window['exports'].Cookie = Cookie;
+    }
+})(Cookie || (Cookie = {}));
 
 //# sourceMappingURL=cookie.js.map

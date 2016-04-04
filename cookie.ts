@@ -1,8 +1,9 @@
-'use strict';
-
 /**
- * Class for cookie
+ * cookie.js
  *
+ * @version
+ * @author Alex5646 <catia.petrowi4@yandex.ru>
+ * @link https://github.com/Alex5646/cookie.js
  * @example
  * new Cookie({
  *     string: 'Hello Wold!',
@@ -22,7 +23,9 @@
  * console.log(Cookie.get('object'));
  * // -> {one: 1, two: 2}
  */
-class Cookie {
+namespace Cookie {
+    'use strict';
+
     /**
      * Set cookies
      *
@@ -49,16 +52,16 @@ class Cookie {
      * console.log(document.cookie);
      * // -> 'one=1; two=2'
      */
-    public static set(
-        key: string|Object,
-        value?: any,
+    export function set(
+        key:string|Object,
+        value?:any,
         options: {
             expires?: any;
             path?: string;
             domain?: string;
             secure?: boolean;
         } = {}
-    ): Cookie {
+    ) {
         if (typeof key === 'object') {
             for (var name in key) {
                 this.set(name, key[name]);
@@ -79,16 +82,16 @@ class Cookie {
         document.cookie =
             key + '=' + value +
             (options.expires ? '; expires=' + options.expires.toUTCString() : '') +
-            (options.path    ? '; path=' + options.path : '') +
-            (options.domain  ? '; domain=' + options.domain : '') +
-            (options.secure  ? '; secure' : '');
+            (options.path ? '; path=' + options.path : '') +
+            (options.domain ? '; domain=' + options.domain : '') +
+            (options.secure ? '; secure' : '');
 
         return this;
     }
 
     /**
      * Getting cookies
-
+     *
      * @example
      * Cookie.set('my_cookie', 5);
      * console.log(Cookie.get('my_cookie'));
@@ -98,12 +101,11 @@ class Cookie {
      * console.log(Cookie.get('my_cookie'));
      * // -> [1, 2, 3]
      *
-     *
      * Cookie.set({one: 1, two: 2});
      * console.log(Cookie.get('one', 'two'));
      * // -> {one: 1, two: 2}
      */
-    public static get(...keys: string[]): any {
+    export function get(...keys:string[]):any {
         var result = {};
 
         for (var key of keys) {
@@ -136,7 +138,7 @@ class Cookie {
      * console.log(document.cookie)
      * // -> ''
      */
-    public static remove(...keys: string[]): Cookie {
+    export function remove(...keys:string[]) {
         for (var key of keys) {
             this.set(key, '', {expires: -1});
         }
@@ -156,7 +158,7 @@ class Cookie {
      * console.log(Cookie.keys());
      * // -> ['one', 'two']
      */
-    public static keys(): string[] {
+    export function keys():string[] {
         var keys = [];
         for (var cookie of document.cookie.split('; ')) {
             keys.push(cookie.split('=')[0]);
@@ -172,7 +174,7 @@ class Cookie {
      * console.log(Cookie.all());
      * // -> {one: 1, two: 2}
      */
-    public static all(): Object {
+    export function all():Object {
         return this.get.apply(this, this.keys());
     }
 
@@ -187,32 +189,28 @@ class Cookie {
      * console.log(document.cookie);
      * // -> ''
      */
-    public static clear(): Cookie {
+    export function clear() {
         return this.remove.apply(this, this.keys());
     }
-}
 
-window['Cookie'] = Cookie;
-
-// jQuery support
-if (typeof window['$'] !== 'undefined') {
-    window['$']['cookie'] = Cookie;
-}
-
-// AMD support
-if (typeof window['define'] === 'function') {
-    window['define'](function () {
-        return Cookie;
-    });
-}
-
-// CommonJS/Node.js support
-if (typeof window['exports'] === 'object') {
-    // Support Node.js specific `module.exports` (which can be a function)
-    if (typeof window['module'] === 'object' && typeof window['module'].exports === 'object') {
-        window['exports'] = window['module'].exports = Cookie;
+    // jQuery support
+    if (typeof window['$'] !== 'undefined') {
+        window['$']['cookie'] = Cookie;
     }
 
-    // But always support CommonJS module 1.1.1 spec (`exports` cannot be a function)
-    window['exports'].Cookie = Cookie;
+    // AMD support
+    if (typeof window['define'] === 'function') {
+        window['define'](function () {
+            return Cookie;
+        });
+    }
+
+    // CommonJS/Node.js support
+    if (typeof window['exports'] === 'object') {
+        if (typeof window['module'] === 'object' && typeof window['module'].exports === 'object') {
+            window['exports'] = window['module'].exports = Cookie;
+        }
+
+        window['exports'].Cookie = Cookie;
+    }
 }
