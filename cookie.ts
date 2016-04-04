@@ -2,14 +2,13 @@
  * Class for cookie
  *
  * @example
- * Cookie
- *   .set({
+ * new Cookie({
  *     string: 'Hello Wold!',
  *     array: [1, 2, 3]
  *   })
  *   .set('object', {one: 1, two: 2});
  *
- * console.log(Cookie.get('string'));
+ * console.log(new Cookie('string'));
  * // -> 'Hello Wold!'
  *
  * Cookie.remove('string');
@@ -21,7 +20,7 @@
  * console.log(Cookie.get('object'));
  * // -> {one: 1, two: 2}
  */
-class Cookie {
+export class Cookie {
     /**
      * Set cookies
      *
@@ -51,7 +50,7 @@ class Cookie {
     public static set(
         key: string|Object,
         value?: any,
-        options?: {
+        options: {
             expires?: any;
             path?: string;
             domain?: string;

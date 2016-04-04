@@ -1,7 +1,5 @@
 (function() {
-    QUnit.module('Cookie');
-
-    QUnit.test('set', function (assert) {
+    QUnit.test('Cookie.set()', function (assert) {
         Cookie.set('my_cookie', 5);
         assert.equal(document.cookie, 'my_cookie=5', 'Установка');
 
@@ -14,7 +12,7 @@
         Cookie.clear();
     });
 
-    QUnit.test('get', function (assert) {
+    QUnit.test('Cookie.get()', function (assert) {
         Cookie.set({
             one: 1,
             two: 2,
@@ -28,7 +26,7 @@
         Cookie.clear();
     });
 
-    QUnit.test('remove', function (assert) {
+    QUnit.test('Cookie.remove()', function (assert) {
         Cookie.set({
             one: 1,
             two: 2,
@@ -44,7 +42,7 @@
         Cookie.clear();
     });
 
-    QUnit.test('keys', function (assert) {
+    QUnit.test('Cookie.keys()', function (assert) {
         Cookie.set({
             one: 1,
             two: 2
@@ -55,7 +53,7 @@
         Cookie.clear();
     });
 
-    QUnit.test('all', function (assert) {
+    QUnit.test('Cookie.all()', function (assert) {
         Cookie.set({
             one: 1,
             two: 2
@@ -66,7 +64,7 @@
         Cookie.clear();
     });
 
-    QUnit.test('clear', function (assert) {
+    QUnit.test('Cookie.clear()', function (assert) {
         Cookie.set({
             one: 1,
             two: 2

@@ -7,15 +7,14 @@ Class for cookie
 **Example:**
 
 ```js
-Cookie
-    .set({
-        string: 'Hello Wold!',
+new Cookie({
+        string: 'Hello, World!',
         array: [1, 2, 3]
     })
     .set('object', {one: 1, two: 2});
 
-console.log(Cookie.get('string'));
-// -> 'Hello Wold!'
+console.log(new Cookie('string'));
+// -> 'Hello, World!'
 
 Cookie.remove('string');
 

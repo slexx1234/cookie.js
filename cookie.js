@@ -1,15 +1,15 @@
+"use strict";
 /**
  * Class for cookie
  *
  * @example
- * Cookie
- *   .set({
+ * new Cookie({
  *     string: 'Hello Wold!',
  *     array: [1, 2, 3]
  *   })
  *   .set('object', {one: 1, two: 2});
  *
- * console.log(Cookie.get('string'));
+ * console.log(new Cookie('string'));
  * // -> 'Hello Wold!'
  *
  * Cookie.remove('string');
@@ -178,5 +178,6 @@ var Cookie = (function () {
     };
     return Cookie;
 }());
+exports.Cookie = Cookie;
 
 //# sourceMappingURL=cookie.js.map
