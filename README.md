@@ -6,6 +6,7 @@ tasty-cookies
 ### Table of contents
 
 * [Quick start](#quick-start)
+* [Browser Compatibility]()
 * [Use in jQuery](#use-in-jquery)
 * [Use in CommonJS/Nodey](#use-in-commonjsnode)
 * [API Reference](#api-reference)
@@ -21,6 +22,20 @@ tasty-cookies
 * [Download the latest release](https://github.com/Alex5646/cookie.js/archive/master.zip)
 * Install with [Bower](http://bower.io/): `bower install tasty-cookies`
 * Install with [npm](https://www.npmjs.com/): `npm install tasty-cookies`
+
+### Browser Compatibility
+
+Full support (95.9% global browser share)
+
+* Chrome 4+
+* iOS Safari 4+
+* UC Browser for Android 9.9+
+* Firefox 3.5+
+* Opera 10.5+
+* Firefox for Android 32+
+* Opera Mini 5+
+* IE 8+
+* Safari 4+
 
 ### Use in jQuery
 

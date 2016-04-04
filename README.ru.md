@@ -6,6 +6,7 @@ tasty-cookies
 ### Содержание
 
 * [Быстрый старт](#%D0%91%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9-%D1%81%D1%82%D0%B0%D1%80%D1%82)
+* [Совместимость с браузерами]()
 * [Использование в jQuery](#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-jquery)
 * [Использование в CommonJS/Node](#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-commonjsnode)
 * [Справочное руководство по API](#%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-api)
@@ -21,6 +22,20 @@ tasty-cookies
 * [Загрузить последнюю версию](https://github.com/Alex5646/cookie.js/archive/master.zip)
 * Установить через [Bower](http://bower.io/): `bower install tasty-cookies`
 * Установить через [npm](https://www.npmjs.com/): `npm install tasty-cookies`
+
+### Совместимость с браузерами
+
+Полная поддержка (Общая доля 95,9%)
+
+* Chrome 4+
+* iOS Safari 4+
+* UC Browser for Android 9.9+
+* Firefox 3.5+
+* Opera 10.5+
+* Firefox for Android 32+
+* Opera Mini 5+
+* IE 8+
+* Safari 4+
 
 ### Использование в jQuery
 
