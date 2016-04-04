@@ -102,8 +102,7 @@ var Cookie;
             var matches = document.cookie.match(new RegExp('(?:^|; )' + key.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
             result[key] = matches ? JSON.parse(decodeURIComponent(matches[1])) : undefined;
         }
-        var resultKeys = Object.keys(result);
-        return resultKeys.length == 1 ? result[resultKeys[0]] : result;
+        return keys.length == 1 ? result[keys[0]] : result;
     }
     Cookie.get = get;
     /**
