@@ -6,7 +6,7 @@ tasty-cookies
 ### Table of contents
 
 * [Quick start](#quick-start)
-* [Browser Compatibility]()
+* [Browser Compatibility](#browser-compatibility)
 * [Use in jQuery](#use-in-jquery)
 * [Use in CommonJS/Nodey](#use-in-commonjsnode)
 * [API Reference](#api-reference)
