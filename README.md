@@ -202,3 +202,21 @@ Cookie.set({one: 1, two: 2});
 console.log(Cookie.all());
 // -> {one: 1, two: 2}
 ```
+
+### &#8249;static&#8250; clear()
+
+Clear all cookies
+
+**Return:** Cookie
+
+**Example:**
+
+```js
+Cookie
+  .set({one: 1, two: 2})
+  .clear();
+  
+console.log(document.cookie);
+// -> ''
+```
+

@@ -34,7 +34,6 @@ var Cookie = (function () {
      * @param {String} [options.path] Path for cookie
      * @param {String} [options.domain] Domain for cookie
      * @param {Boolean} [options.secure] Transfer cookies only over a secure connection.
-     * @returns {Cookie}
      *
      * @example
      * Cookie.set('my_cookie', 5);
@@ -75,8 +74,7 @@ var Cookie = (function () {
     };
     /**
      * Getting cookies
-     *
-     * @param {String} keys...
+
      * @example
      * Cookie.set('my_cookie', 5);
      * console.log(Cookie.get('my_cookie'));
@@ -108,9 +106,6 @@ var Cookie = (function () {
     /**
      * Remove cookies
      *
-     * @param {String} keys...
-     * @returns {Cookie}
-     *
      * @example
      * Cookie.set('my_cookie', 5);
      * console.log(document.cookie)
@@ -139,7 +134,6 @@ var Cookie = (function () {
     /**
      * Getting all keys cookies
      *
-     * @returns {Array}
      * @example
      * Cookie.set({
      *   one: 1,
@@ -160,7 +154,6 @@ var Cookie = (function () {
     /**
      * Getting all cookies
      *
-     * @returns {Object}
      * @example
      * Cookie.set({one: 1, two: 2});
      * console.log(Cookie.all());
@@ -172,14 +165,12 @@ var Cookie = (function () {
     /**
      * Clear all cookies
      *
-     * @returns {Cookie}
      * @example
      * Cookie
      *   .set({one: 1, two: 2})
      *   .clear();
      *
      * console.log(document.cookie);
-     *
      * // -> ''
      */
     Cookie.clear = function () {
