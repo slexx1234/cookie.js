@@ -182,5 +182,11 @@ var Cookie = (function () {
 if (typeof window['$'] !== 'undefined') {
     window['$']['cookie'] = Cookie;
 }
+// AMD support
+if (typeof window['define'] !== 'undefined') {
+    window['define'](function () {
+        return Cookie;
+    });
+}
 
 //# sourceMappingURL=cookie.js.map
