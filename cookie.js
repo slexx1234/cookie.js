@@ -178,15 +178,25 @@ var Cookie = (function () {
     };
     return Cookie;
 }());
+window['Cookie'] = Cookie;
 // jQuery support
 if (typeof window['$'] !== 'undefined') {
     window['$']['cookie'] = Cookie;
 }
 // AMD support
-if (typeof window['define'] !== 'undefined') {
+if (typeof window['define'] === 'function') {
     window['define'](function () {
         return Cookie;
     });
+}
+// CommonJS/Node.js support
+if (typeof window['exports'] === 'object') {
+    // Support Node.js specific `module.exports` (which can be a function)
+    if (typeof window['module'] === 'object' && typeof window['module'].exports === 'object') {
+        window['exports'] = window['module'].exports = Cookie;
+    }
+    // But always support CommonJS module 1.1.1 spec (`exports` cannot be a function)
+    window['exports'].Cookie = Cookie;
 }
 
 //# sourceMappingURL=cookie.js.map
