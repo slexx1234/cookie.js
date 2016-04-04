@@ -85,4 +85,31 @@ class Cookie {
 
         return this;
     }
+
+    /**
+     * Получение cookie
+     *
+     * @method Cookie#get
+     * @param {String} keys... Ключ
+     * @example
+     * Cookie.set('my_cookie', 5);
+     * console.log(Cookie.get('my_cookie'));
+     * // -> 5
+     *
+     * Cookie.set('my_cookie', [1, 2, 3]);
+     * console.log(Cookie.get('my_cookie'));
+     * // -> [1, 2, 3]
+     */
+    public static get(...keys: string[]): any {
+        var result = [];
+        for (var key of keys) {
+            var matches = document.cookie.match(new RegExp(
+                '(?:^|; )' + key.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'
+            ));
+
+            result.push(matches ? JSON.parse(decodeURIComponent(matches[1])) : undefined);
+        }
+
+        return result.length == 1 ? result[0] : result;
+    }
 }
