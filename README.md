@@ -30,6 +30,11 @@ console.log(Cookie.get('object'));
 
 Set cookies
 
+**Source:** [JavaScript][1], [TypeScript][2]
+
+[1]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L53
+[2]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L51
+
 **Arguments:**
 
 <table>
@@ -117,6 +122,11 @@ console.log(document.cookie);
 
 Getting cookies
 
+**Source:** [JavaScript][3], [TypeScript][4]
+
+[3]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L92
+[4]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L105
+
 **Arguments:**
 
 | Name    | Type   | Description |
@@ -144,6 +154,11 @@ console.log(Cookie.get('one', 'two'));
 ### &#8249;static&#8250; remove(keys...)
 
 Remove cookies
+
+**Source:** [JavaScript][5], [TypeScript][6]
+
+[5]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L123
+[6]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L138
 
 **Arguments:**
 
@@ -174,6 +189,11 @@ console.log(document.cookie)
 
 Getting all keys cookies
 
+**Source:** [JavaScript][7], [TypeScript][8]
+
+[7]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L146
+[8]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L158
+
 **Return:** Array
 
 **Example:**
@@ -192,6 +212,11 @@ console.log(Cookie.keys());
 
 Getting all cookies
 
+**Source:** [JavaScript][9], [TypeScript][10]
+
+[9]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L162
+[10]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L174
+
 **Return:** Object
 
 **Example:**
@@ -205,6 +230,11 @@ console.log(Cookie.all());
 ### &#8249;static&#8250; clear()
 
 Clear all cookies
+
+**Source:** [JavaScript][11], [TypeScript][12]
+
+[11]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L176
+[12]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L189
 
 **Return:** Cookie
 
