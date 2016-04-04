@@ -1,19 +1,62 @@
 cookie.js
 ====================================================
 
-Class for cookie
+### Table of contents
+
+* Quick start
+* Table of contents
+* Use in jQuery
+* Use in CommonJS/Node
+* API Reference
+
+### Quick start
+
+* Install with [Bower](http://bower.io/): `bower install cookie.js`
+* Install with [npm](https://www.npmjs.com/): `npm install cookie.js`
+
+### Use in jQuery
+
+jQuery support! If you have connected jQuery you can use an alias **$.cookie**
+
+```js
+$.cookie.set('my_cookie', 'Hello, World!');
+$.cookie.get('my_cookie');
+// -> 'Hello, World!'
+```
+
+### Use in CommonJS/Node
+
+In environments where there is no native window object, Cookie.js will export 
+a factory method that accepts a window instance. For example, using 
+[jsdom](https://github.com/tmpvar/jsdom), you might do something like:
+
+```js
+var window = require('jsdom').jsdom().parentWindow;
+var Cookie = require('cookie.js')(window);
+```
+
+API Reference
 ----------------------------------------------------
+
+#### Methods
+
+* Cookie.set(key, value, [options])
+* Cookie.get(keys...)
+* Cookie.remove(keys...)
+* Cookie.keys()
+* Cookie.clear()
+* Cookie.all()
 
 **Example:**
 
 ```js
-new Cookie({
+Cookie.set({
         string: 'Hello, World!',
         array: [1, 2, 3]
     })
     .set('object', {one: 1, two: 2});
 
-console.log(new Cookie('string'));
+console.log(Cookie.get('string'));
 // -> 'Hello, World!'
 
 Cookie.remove('string');
@@ -26,7 +69,7 @@ console.log(Cookie.get('object'));
 // -> {one: 1, two: 2}
 ```
 
-### &#8249;static&#8250; set(key, value, [options])
+### Cookie.set(key, value, [options])
 
 Set cookies
 
@@ -118,7 +161,7 @@ console.log(document.cookie);
 // -> 'one=1; two=2'
 ```
 
-### &#8249;static&#8250; get(keys...)
+### Cookie.get(keys...)
 
 Getting cookies
 
@@ -151,7 +194,7 @@ console.log(Cookie.get('one', 'two'));
 // -> {one: 1, two: 2}
 ```
 
-### &#8249;static&#8250; remove(keys...)
+### Cookie.remove(keys...)
 
 Remove cookies
 
@@ -185,7 +228,7 @@ console.log(document.cookie)
 // -> ''
 ```
 
-### &#8249;static&#8250; keys()
+### Cookie.keys()
 
 Getting all keys cookies
 
@@ -208,7 +251,7 @@ console.log(Cookie.keys());
 // -> ['one', 'two']
 ```
 
-### &#8249;static&#8250; all()
+### Cookie.all()
 
 Getting all cookies
 
@@ -227,7 +270,7 @@ console.log(Cookie.all());
 // -> {one: 1, two: 2}
 ```
 
-### &#8249;static&#8250; clear()
+### Cookie.clear()
 
 Clear all cookies
 

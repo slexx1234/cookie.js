@@ -5,13 +5,13 @@
  * @author Alex5646 <catia.petrowi4@yandex.ru>
  * @link https://github.com/Alex5646/cookie.js
  * @example
- * new Cookie({
+ * Cookie.set({
  *     string: 'Hello Wold!',
  *     array: [1, 2, 3]
  *   })
  *   .set('object', {one: 1, two: 2});
  *
- * console.log(new Cookie('string'));
+ * console.log(Cookie.get('string'));
  * // -> 'Hello Wold!'
  *
  * Cookie.remove('string');
@@ -67,7 +67,7 @@ namespace Cookie {
                 this.set(name, key[name]);
             }
 
-            return Cookie;
+            return this;
         }
 
         var expires = options.expires;
@@ -143,7 +143,7 @@ namespace Cookie {
             this.set(key, '', {expires: -1});
         }
 
-        return Cookie;
+        return this;
     }
 
     /**
