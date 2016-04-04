@@ -16,4 +16,12 @@
         assert.equal(Cookie.get('my_cookie'), 5, 'Получение');
         assert.deepEqual(Cookie.get('one', 'two'), {one:1, two:2}, 'Получение нескольких');
     });
+
+    QUnit.test('remove', function (assert) {
+        Cookie.remove('my_cookie');
+        assert.equal(document.cookie, 'one=1; two=2', 'Удаление');
+
+        Cookie.remove('one', 'two');
+        assert.equal(document.cookie, '', 'Удаление нескольких');
+    });
 })();

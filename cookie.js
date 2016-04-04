@@ -100,6 +100,33 @@ var Cookie = (function () {
         }
         return result.length == 1 ? result[0] : result;
     };
+    /**
+     * Удаление cookie
+     *
+     * @method Cookie#remove
+     * @param {String} keys... Ключ
+     * @returns {Cookie}
+     *
+     * @example
+     * Cookie.set('my_cookie', 5);
+     * console.log(document.cookie)
+     * // -> 'my_cookie=5'
+     *
+     * Cookie.remove('my_cookie')
+     * console.log(document.cookie)
+     * // -> ''
+     */
+    Cookie.remove = function () {
+        var keys = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            keys[_i - 0] = arguments[_i];
+        }
+        for (var _a = 0, keys_2 = keys; _a < keys_2.length; _a++) {
+            var key = keys_2[_a];
+            this.set(key, '', { expires: -1 });
+        }
+        return Cookie;
+    };
     return Cookie;
 }());
 

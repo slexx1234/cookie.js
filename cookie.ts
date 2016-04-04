@@ -112,4 +112,28 @@ class Cookie {
 
         return result.length == 1 ? result[0] : result;
     }
+
+    /**
+     * Удаление cookie
+     *
+     * @method Cookie#remove
+     * @param {String} keys... Ключ
+     * @returns {Cookie}
+     *
+     * @example
+     * Cookie.set('my_cookie', 5);
+     * console.log(document.cookie)
+     * // -> 'my_cookie=5'
+     *
+     * Cookie.remove('my_cookie')
+     * console.log(document.cookie)
+     * // -> ''
+     */
+    public static remove(...keys: string[]): Cookie {
+        for (var key of keys) {
+            this.set(key, '', {expires: -1});
+        }
+
+        return Cookie;
+    }
 }
