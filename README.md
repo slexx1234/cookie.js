@@ -31,66 +31,20 @@ Set cookies
 
 **Arguments:**
 
-<table>
-  <thead>
-    <tr> 
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>key</td>
-      <td>String, Object</td>
-      <td>Cookie key</td>
-    <tr>
-    <tr>
-      <td>value</td>
-      <td>*</td>
-      <td>Cookie value</td>
-    <tr>
-    <tr>
-      <td>[options]</td>
-      <td>Object</td>
-      <td>
-        Options for cookie
-        **Properties:**
-        <table>
-          <thead>
-            <tr> 
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>[expires]</td>
-              <td>Number</td>
-              <td>Cookie expiration time</td>
-            <tr>
-            <tr>
-              <td>[path]</td>
-              <td>String</td>
-              <td>Path for cookie</td>
-            <tr>
-            <tr>
-              <td>[domain]</td>
-              <td>String</td>
-              <td>Domain for cookie</td>
-            <tr>
-            <tr>
-              <td>[secure]</td>
-              <td>Boolean</td>
-              <td>Transfer cookies only over a secure connection.</td>
-            <tr>
-          </tbody>
-        <table>
-      </td>
-    <tr>
-  </tbody>
-<table>
+| Name      | Type           | Description                                                           |
+|-----------|----------------|-----------------------------------------------------------------------|
+| key       | String, Object | Cookie key                                                            |
+| [value]   | *              | Cookie value                                                          | 
+| [options] | Object         | Options for cookie                                                    |
+|           |                | **Properties:**                                                       |
+|           |                | Name      | Type    | Description                                     |
+|           |                |-----------|---------|-------------------------------------------------|
+|           |                | [expires] | Number  | Cookie expiration time                          |
+|           |                | [path]    | String  | Path for cookie                                 |
+|           |                | [domain]  | String  | Domain for cookie                               |
+|           |                | [secure]  | Boolean | Transfer cookies only over a secure connection. |
+
+**Return:** Cookie
 
 **Example:**
 
@@ -120,6 +74,8 @@ Getting cookies
 |---------|--------|-------------|
 | keys... | String | Cookie keys |
 
+**Return:** *
+
 **Example:**
 
 ```js
@@ -134,4 +90,31 @@ console.log(Cookie.get('my_cookie'));
 Cookie.set({one: 1, two: 2});
 console.log(Cookie.get('one', 'two'));
 // -> {one: 1, two: 2}
+```
+
+### &#8249;static&#8250; remove(keys...)
+
+**Arguments:**
+
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| keys... | String | Cookie keys |
+
+**Return:** Cookie
+
+**Example:**
+
+```js
+Cookie.set('my_cookie', 5);
+console.log(document.cookie)
+// -> 'my_cookie=5'
+
+Cookie.remove('my_cookie')
+console.log(document.cookie)
+// -> ''
+
+Cookie.set({one: 1, two: 2});
+Cookie.remove('one', 'two');
+console.log(document.cookie)
+// -> ''
 ```
