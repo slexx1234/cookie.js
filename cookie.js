@@ -127,6 +127,28 @@ var Cookie = (function () {
         }
         return Cookie;
     };
+    /**
+     * Получение всех ключей
+     *
+     * @method Cookie#keys
+     * @returns {Array}
+     * @example
+     * Cookie.set({
+     *   one: 1,
+     *   two: 2
+     * });
+     *
+     * console.log(Cookie.keys());
+     * // -> ['one', 'two']
+     */
+    Cookie.keys = function () {
+        var keys = [];
+        for (var _i = 0, _a = document.cookie.split('; '); _i < _a.length; _i++) {
+            var cookie = _a[_i];
+            keys.push(cookie.split('=')[0]);
+        }
+        return keys;
+    };
     return Cookie;
 }());
 

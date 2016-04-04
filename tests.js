@@ -24,4 +24,13 @@
         Cookie.remove('one', 'two');
         assert.equal(document.cookie, '', 'Удаление нескольких');
     });
+
+    QUnit.test('keys', function (assert) {
+        Cookie.set({
+            one: 1,
+            two: 2
+        });
+
+        assert.deepEqual(Cookie.keys(), ['one', 'two'], 'Получение ключей');
+    });
 })();

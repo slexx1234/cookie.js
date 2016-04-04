@@ -136,4 +136,26 @@ class Cookie {
 
         return Cookie;
     }
+
+    /**
+     * Получение всех ключей
+     *
+     * @method Cookie#keys
+     * @returns {Array}
+     * @example
+     * Cookie.set({
+     *   one: 1,
+     *   two: 2
+     * });
+     *
+     * console.log(Cookie.keys());
+     * // -> ['one', 'two']
+     */
+    public static keys(): string[] {
+        var keys = [];
+        for (var cookie of document.cookie.split('; ')) {
+            keys.push(cookie.split('=')[0]);
+        }
+        return keys;
+    }
 }
