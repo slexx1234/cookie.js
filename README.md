@@ -256,7 +256,7 @@ console.log(Cookie.keys());
 
 Getting all cookies
 
-[Source](cookie-all-src)
+[Source][cookie-all-src]
 
 **Return:** Object
 
@@ -272,7 +272,7 @@ console.log(Cookie.all());
 
 Clear all cookies
 
-[Source](cookie-clear-src)
+[Source][cookie-clear-src]
 
 **Return:** Cookie
 
