@@ -1,6 +1,6 @@
 {
   "name": "cookie.js",
-  "description": "Class for cookie",
+  "description": "Cookie Manipulation API",
   "main": "cookie.js",
   "authors": [
     "Alex5646 <catia.petrowi4@yandex.ru>"
@@ -14,5 +14,6 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "keywords" : ["jQuery", "cookies", "CommonJS", "client", "browser", "Node", "AMD"]
 }

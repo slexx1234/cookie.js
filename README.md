@@ -3,11 +3,16 @@ cookie.js
 
 ### Table of contents
 
-* Quick start
-* Table of contents
-* Use in jQuery
-* Use in CommonJS/Node
-* API Reference
+* [Quick start](https://github.com/Alex5646/cookie.js#quick-start)
+* [Use in jQuery](https://github.com/Alex5646/cookie.js#use-in-jquery)
+* [Use in CommonJS/Nodey](https://github.com/Alex5646/cookie.js#use-in-commonjsnode)
+* [API Reference](https://github.com/Alex5646/cookie.js#api-reference)
+    * [Cookie.set(key, value, [options])][cookie-set]
+    * [Cookie.get(keys...)][cookie-get]
+    * [Cookie.remove(keys...)][cookie-remove]
+    * [Cookie.keys()][cookie-keys]
+    * [Cookie.all()][cookie-all]
+    * [Cookie.clear()][cookie-clear]
 
 ### Quick start
 
@@ -40,12 +45,19 @@ API Reference
 
 #### Methods
 
-* Cookie.set(key, value, [options])
-* Cookie.get(keys...)
-* Cookie.remove(keys...)
-* Cookie.keys()
-* Cookie.clear()
-* Cookie.all()
+* [Cookie.set(key, value, [options])][cookie-set]
+* [Cookie.get(keys...)][cookie-get]
+* [Cookie.remove(keys...)][cookie-remove]
+* [Cookie.keys()][cookie-keys]
+* [Cookie.all()][cookie-all]
+* [Cookie.clear()][cookie-clear]
+
+[cookie-set]: https://github.com/Alex5646/cookie.js#cookiesetkey-value-options
+[cookie-get]: https://github.com/Alex5646/cookie.js#cookiegetkeys
+[cookie-remove]: https://github.com/Alex5646/cookie.js#cookieremovekeys
+[cookie-keys]: https://github.com/Alex5646/cookie.js#cookiekeys
+[cookie-all]: https://github.com/Alex5646/cookie.js#cookieall
+[cookie-clear]: https://github.com/Alex5646/cookie.js#cookieclear
 
 **Example:**
 
@@ -73,10 +85,7 @@ console.log(Cookie.get('object'));
 
 Set cookies
 
-**Source:** [JavaScript][1], [TypeScript][2]
-
-[1]: 
-[2]: 
+[Source][cookie-set-src]
 
 **Arguments:**
 
@@ -165,10 +174,7 @@ console.log(document.cookie);
 
 Getting cookies
 
-**Source:** [JavaScript][3], [TypeScript][4]
-
-[3]: 
-[4]: 
+[Source][cookie-get-src]
 
 **Arguments:**
 
@@ -198,10 +204,7 @@ console.log(Cookie.get('one', 'two'));
 
 Remove cookies
 
-**Source:** [JavaScript][5], [TypeScript][6]
-
-[5]: 
-[6]: 
+[Source][cookie-remove-src]
 
 **Arguments:**
 
@@ -210,6 +213,7 @@ Remove cookies
 | keys... | String | Cookie keys |
 
 **Return:** Cookie
+
 
 **Example:**
 
@@ -232,10 +236,7 @@ console.log(document.cookie)
 
 Getting all keys cookies
 
-**Source:** [JavaScript][7], [TypeScript][8]
-
-[7]: 
-[8]: 
+[Source][cookie-keys-src]
 
 **Return:** Array
 
@@ -255,10 +256,7 @@ console.log(Cookie.keys());
 
 Getting all cookies
 
-**Source:** [JavaScript][9], [TypeScript][10]
-
-[9]: 
-[10]: 
+[Source](cookie-all-src)
 
 **Return:** Object
 
@@ -274,10 +272,7 @@ console.log(Cookie.all());
 
 Clear all cookies
 
-**Source:** [JavaScript][11], [TypeScript][12]
-
-[11]: 
-[12]: 
+[Source](cookie-clear-src)
 
 **Return:** Cookie
 
@@ -292,3 +287,9 @@ console.log(document.cookie);
 // -> ''
 ```
 
+[cookie-set-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L55
+[cookie-get-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L108
+[cookie-remove-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L141
+[cookie-keys-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L161
+[cookie-all-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L177
+[cookie-clear-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L192
