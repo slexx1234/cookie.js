@@ -17,6 +17,8 @@ Cookie
 console.log(Cookie.get('string'));
 // -> 'Hello Wold!'
 
+Cookie.remove('string');
+
 console.log(Cookie.get('string'));
 // -> undefined
 console.log(Cookie.get('array'));
@@ -142,6 +144,8 @@ console.log(Cookie.get('one', 'two'));
 
 ### &#8249;static&#8250; remove(keys...)
 
+Remove cookies
+
 **Arguments:**
 
 | Name    | Type   | Description |
@@ -169,6 +173,8 @@ console.log(document.cookie)
 
 ### &#8249;static&#8250; keys()
 
+Getting all keys cookies
+
 **Return:** Array
 
 **Example:**
@@ -181,4 +187,18 @@ Cookie.set({
 
 console.log(Cookie.keys());
 // -> ['one', 'two']
+```
+
+### &#8249;static&#8250; all()
+
+Getting all cookies
+
+**Return:** Object
+
+**Example:**
+
+```js
+Cookie.set({one: 1, two: 2});
+console.log(Cookie.all());
+// -> {one: 1, two: 2}
 ```

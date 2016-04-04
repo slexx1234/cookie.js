@@ -12,6 +12,8 @@
  * console.log(Cookie.get('string'));
  * // -> 'Hello Wold!'
  *
+ * Cookie.remove('string');
+ *
  * console.log(Cookie.get('string'));
  * // -> undefined
  * console.log(Cookie.get('array'));
