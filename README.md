@@ -1,7 +1,7 @@
 tasty-cookies
 ====================================================
 
-**Language:** [Russian](), English
+**Language:** [Russian](https://github.com/Alex5646/cookie.js/blob/master/README.ru.md), English
 
 ### Table of contents
 
@@ -18,6 +18,7 @@ tasty-cookies
 
 ### Quick start
 
+* [Download the latest release](https://github.com/Alex5646/cookie.js/archive/master.zip)
 * Install with [Bower](http://bower.io/): `bower install tasty-cookies`
 * Install with [npm](https://www.npmjs.com/): `npm install tasty-cookies`
 
@@ -33,13 +34,13 @@ $.cookie.get('my_cookie');
 
 ### Use in CommonJS/Node
 
-In environments where there is no native window object, Cookie.js will export 
+In environments where there is no native window object, tasty-cookies will export 
 a factory method that accepts a window instance. For example, using 
 [jsdom](https://github.com/tmpvar/jsdom), you might do something like:
 
 ```js
 var window = require('jsdom').jsdom().parentWindow;
-var Cookie = require('cookie.js')(window);
+var Cookie = require('tasty-cookies')(window);
 ```
 
 API Reference
