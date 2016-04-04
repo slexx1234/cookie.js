@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Class for cookie
  *
@@ -20,7 +22,7 @@
  * console.log(Cookie.get('object'));
  * // -> {one: 1, two: 2}
  */
-export class Cookie {
+class Cookie {
     /**
      * Set cookies
      *
@@ -188,4 +190,9 @@ export class Cookie {
     public static clear(): Cookie {
         return this.remove.apply(this, this.keys());
     }
+}
+
+// jQuery support
+if (typeof window['$'] !== 'undefined') {
+    window['$']['cookie'] = Cookie;
 }

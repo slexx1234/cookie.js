@@ -32,8 +32,8 @@ Set cookies
 
 **Source:** [JavaScript][1], [TypeScript][2]
 
-[1]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L53
-[2]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L51
+[1]: 
+[2]: 
 
 **Arguments:**
 
@@ -124,8 +124,8 @@ Getting cookies
 
 **Source:** [JavaScript][3], [TypeScript][4]
 
-[3]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L92
-[4]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L105
+[3]: 
+[4]: 
 
 **Arguments:**
 
@@ -157,8 +157,8 @@ Remove cookies
 
 **Source:** [JavaScript][5], [TypeScript][6]
 
-[5]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L123
-[6]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L138
+[5]: 
+[6]: 
 
 **Arguments:**
 
@@ -191,8 +191,8 @@ Getting all keys cookies
 
 **Source:** [JavaScript][7], [TypeScript][8]
 
-[7]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L146
-[8]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L158
+[7]: 
+[8]: 
 
 **Return:** Array
 
@@ -214,8 +214,8 @@ Getting all cookies
 
 **Source:** [JavaScript][9], [TypeScript][10]
 
-[9]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L162
-[10]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L174
+[9]: 
+[10]: 
 
 **Return:** Object
 
@@ -233,8 +233,8 @@ Clear all cookies
 
 **Source:** [JavaScript][11], [TypeScript][12]
 
-[11]: https://github.com/Alex5646/cookie.js/blob/master/cookie.js#L176
-[12]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L189
+[11]: 
+[12]: 
 
 **Return:** Cookie
 

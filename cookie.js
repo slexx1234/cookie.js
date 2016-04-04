@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * Class for cookie
  *
@@ -178,6 +178,9 @@ var Cookie = (function () {
     };
     return Cookie;
 }());
-exports.Cookie = Cookie;
+// jQuery support
+if (typeof window['$'] !== 'undefined') {
+    window['$']['cookie'] = Cookie;
+}
 
 //# sourceMappingURL=cookie.js.map
