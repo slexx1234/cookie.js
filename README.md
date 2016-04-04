@@ -27,6 +27,8 @@ console.log(Cookie.get('object'));
 
 ### &#8249;static&#8250; set(key, value, [options])
 
+Set cookies
+
 **Arguments:**
 
 <table>
@@ -53,9 +55,7 @@ console.log(Cookie.get('object'));
       <td>Object</td>
       <td>
         Options for cookie
-        
         **Properties:**
-        
         <table>
           <thead>
             <tr> 
@@ -92,7 +92,7 @@ console.log(Cookie.get('object'));
   </tbody>
 <table>
 
-**example:**
+**Example:**
 
 ```js
 Cookie.set('my_cookie', 5);
@@ -110,5 +110,28 @@ console.log(document.cookie);
 // -> 'one=1; two=2'
 ```
 
+### &#8249;static&#8250; get(keys...)
 
+Getting cookies
 
+**Arguments:**
+
+| Name    | Type   | Description |
+|---------|--------|-------------|
+| keys... | String | Cookie keys |
+
+**Example:**
+
+```js
+Cookie.set('my_cookie', 5);
+console.log(Cookie.get('my_cookie'));
+// -> 5
+
+Cookie.set('my_cookie', [1, 2, 3]);
+console.log(Cookie.get('my_cookie'));
+// -> [1, 2, 3]
+
+Cookie.set({one: 1, two: 2});
+console.log(Cookie.get('one', 'two'));
+// -> {one: 1, two: 2}
+```
