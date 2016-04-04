@@ -1,7 +1,6 @@
 /**
- * Класс для работы с cookies
+ * Class for cookie
  *
- * @class Cookie
  * @example
  * Cookie
  *   .set({
@@ -22,16 +21,15 @@
  */
 class Cookie {
     /**
-     * Установка cookie
+     * Set cookies
      *
-     * @method Cookie#set
-     * @param {String|Object} key Ключ, можно передать объект в качесте этого параметра.
-     * @param {*} [value] Значение
-     * @param {Object} [options] Настройки
-     * @param {Number} [options.expires] Время истечения cookie
-     * @param {String} [options.path] Путь для cookie
-     * @param {String} [options.domain] Домен для cookie
-     * @param {Boolean} [options.secure] Если true, то пересылать cookie только по защищенному соединению
+     * @param {String|Object} key
+     * @param {*} [value]
+     * @param {Object} [options]
+     * @param {Number} [options.expires] Cookie expiration time
+     * @param {String} [options.path] Path for cookie
+     * @param {String} [options.domain] Domain for cookie
+     * @param {Boolean} [options.secure] Transfer cookies only over a secure connection.
      * @returns {Cookie}
      *
      * @example
@@ -87,10 +85,9 @@ class Cookie {
     }
 
     /**
-     * Получение cookie
+     * Getting cookies
      *
-     * @method Cookie#get
-     * @param {String} keys... Ключ
+     * @param {String} keys...
      * @example
      * Cookie.set('my_cookie', 5);
      * console.log(Cookie.get('my_cookie'));
@@ -99,25 +96,32 @@ class Cookie {
      * Cookie.set('my_cookie', [1, 2, 3]);
      * console.log(Cookie.get('my_cookie'));
      * // -> [1, 2, 3]
+     *
+     *
+     * Cookie.set({one: 1, two: 2});
+     * console.log(Cookie.get('one', 'two'));
+     * // -> {one: 1, two: 2}
      */
     public static get(...keys: string[]): any {
-        var result = [];
+        var result = {};
+
         for (var key of keys) {
             var matches = document.cookie.match(new RegExp(
                 '(?:^|; )' + key.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'
             ));
 
-            result.push(matches ? JSON.parse(decodeURIComponent(matches[1])) : undefined);
+            result[key] = matches ? JSON.parse(decodeURIComponent(matches[1])) : undefined;
         }
 
-        return result.length == 1 ? result[0] : result;
+        var resultKeys = Object.keys(result);
+
+        return resultKeys.length == 1 ? result[resultKeys[0]] : result;
     }
 
     /**
-     * Удаление cookie
+     * Remove cookies
      *
-     * @method Cookie#remove
-     * @param {String} keys... Ключ
+     * @param {String} keys...
      * @returns {Cookie}
      *
      * @example
@@ -126,6 +130,11 @@ class Cookie {
      * // -> 'my_cookie=5'
      *
      * Cookie.remove('my_cookie')
+     * console.log(document.cookie)
+     * // -> ''
+     *
+     * Cookie.set({one: 1, two: 2});
+     * Cookie.remove('one', 'two');
      * console.log(document.cookie)
      * // -> ''
      */
@@ -138,9 +147,8 @@ class Cookie {
     }
 
     /**
-     * Получение всех ключей
+     * Getting all keys cookies
      *
-     * @method Cookie#keys
      * @returns {Array}
      * @example
      * Cookie.set({
@@ -160,9 +168,8 @@ class Cookie {
     }
 
     /**
-     * Получение всех cookie
+     * Getting all cookies
      *
-     * @method Cookie#all
      * @returns {Object}
      * @example
      * Cookie.set({one: 1, two: 2});
@@ -174,9 +181,8 @@ class Cookie {
     }
 
     /**
-     * Удаление всех cookie
+     * Clear all cookies
      *
-     * @method Cookie#clear
      * @returns {Cookie}
      * @example
      * Cookie
