@@ -1,3 +1,4 @@
+"use strict";
 /**
  * tasty-cookies
  *
@@ -25,7 +26,6 @@
  */
 var Cookie;
 (function (Cookie) {
-    'use strict';
     /**
      * Set cookies
      *
@@ -182,23 +182,12 @@ var Cookie;
         return this.remove.apply(this, this.keys());
     }
     Cookie.clear = clear;
-    // jQuery support
-    if (typeof window['$'] !== 'undefined') {
-        window['$']['cookie'] = Cookie;
-    }
     // AMD support
     if (typeof window['define'] === 'function') {
         window['define'](function () {
             return Cookie;
         });
     }
-    // CommonJS/Node.js support
-    if (typeof window['exports'] === 'object') {
-        if (typeof window['module'] === 'object' && typeof window['module'].exports === 'object') {
-            window['exports'] = window['module'].exports = Cookie;
-        }
-        window['exports'].Cookie = Cookie;
-    }
-})(Cookie || (Cookie = {}));
+})(Cookie = exports.Cookie || (exports.Cookie = {}));
 
 //# sourceMappingURL=cookie.js.map

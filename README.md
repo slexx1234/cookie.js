@@ -7,7 +7,6 @@ tasty-cookies
 
 * [Quick start](#quick-start)
 * [Browser Compatibility](#browser-compatibility)
-* [Use in jQuery](#use-in-jquery)
 * [Use in CommonJS/Nodey](#use-in-commonjsnode)
 * [API Reference](#api-reference)
     * [Cookie.set(key, value, [options])][cookie-set]
@@ -36,16 +35,6 @@ Full support (95.9% global browser share)
 * Opera Mini 5+
 * IE 8+
 * Safari 4+
-
-### Use in jQuery
-
-jQuery support! If you have connected jQuery you can use an alias **$.cookie**
-
-```js
-$.cookie.set('my_cookie', 'Hello, World!');
-$.cookie.get('my_cookie');
-// -> 'Hello, World!'
-```
 
 ### Use in CommonJS/Node
 
