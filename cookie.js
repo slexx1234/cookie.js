@@ -1,4 +1,3 @@
-"use strict";
 /**
  * tasty-cookies
  *
@@ -188,6 +187,10 @@ var Cookie;
             return Cookie;
         });
     }
-})(Cookie = exports.Cookie || (exports.Cookie = {}));
+    // CommonJS/Node support
+    if (typeof window['exports'] === 'object') {
+        window['exports']['Cookie'] = Cookie;
+    }
+})(Cookie || (Cookie = {}));
 
 //# sourceMappingURL=cookie.js.map

@@ -23,7 +23,7 @@
  * console.log(Cookie.get('object'));
  * // -> {one: 1, two: 2}
  */
-export namespace Cookie {
+namespace Cookie {
 
     /**
      * Set cookies
@@ -195,5 +195,10 @@ export namespace Cookie {
         window['define'](function () {
             return Cookie;
         });
+    }
+
+    // CommonJS/Node support
+    if (typeof window['exports'] === 'object') {
+        window['exports']['Cookie'] = Cookie;
     }
 }
