@@ -9,10 +9,9 @@ tasty-cookies
 * [Совместимость с браузерами](#%D0%A1%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C-%D1%81-%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0%D0%BC%D0%B8)
 * [Использование в CommonJS/Node](#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-commonjsnode)
 * [Справочное руководство по API](#%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-api)
-    * [Свойства]()
+    * [Свойства](#Свойства-1)
         * [Cookie.length][cookie-length]
-    
-    * [Методы]()
+    * [Методы](#Методы-1)
         * [Cookie.set(key, value, [options])][cookie-set]
         * [Cookie.get(keys...)][cookie-get]
         * [Cookie.remove(keys...)][cookie-remove]
@@ -55,11 +54,11 @@ var Cookie = require('tasty-cookies')(window);
 Справочное руководство по API
 ----------------------------------------------------
 
-#### [Свойства]()
+#### [Свойства](#Свойства-1)
 
 * [Cookie.length][cookie-length]
 
-#### [Методы]()
+#### [Методы](#Методы-1)
 
 * [Cookie.set(key, value, [options])][cookie-set]
 * [Cookie.get(keys...)][cookie-get]
@@ -69,14 +68,14 @@ var Cookie = require('tasty-cookies')(window);
 * [Cookie.clear()][cookie-clear]
 * [Cookie.noConflict()][cookie-noconflict]
 
-[cookie-length]: #
+[cookie-length]: #length
 [cookie-set]: #cookiesetkey-value-options
 [cookie-get]: #cookiegetkeys
 [cookie-remove]: #cookieremovekeys
 [cookie-keys]: #cookiekeys
 [cookie-all]: #cookieall
 [cookie-clear]: #cookieclear
-[cookie-noconflict]: 
+[cookie-noconflict]: #cookienoconflict
 
 **Пример:**
 

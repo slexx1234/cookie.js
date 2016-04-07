@@ -9,10 +9,9 @@ tasty-cookies
 * [Browser Compatibility](#browser-compatibility)
 * [Use in CommonJS/Nodey](#use-in-commonjsnode)
 * [API Reference](#api-reference)
-    * [Properties]()
+    * [Properties](#properties-1)
         * [Cookie.length][cookie-length]
-    
-    * [Methods]()
+    * [Methods](#methods-1)
         * [Cookie.set(key, value, [options])][cookie-set]
         * [Cookie.get(keys...)][cookie-get]
         * [Cookie.remove(keys...)][cookie-remove]
@@ -54,11 +53,11 @@ var Cookie = require('tasty-cookies')(window);
 
 API Reference
 ----------------------------------------------------
-#### [Properties]()
+#### [Properties](#properties-1)
 
 * [Cookie.length][cookie-length]
 
-#### [Methods]()
+#### [Methods](#methods-1)
 
 * [Cookie.set(key, value, [options])][cookie-set]
 * [Cookie.get(keys...)][cookie-get]
@@ -68,14 +67,14 @@ API Reference
 * [Cookie.clear()][cookie-clear]
 * [Cookie.noConflict()][cookie-noconflict]
 
-[cookie-length]: #
+[cookie-length]: #length
 [cookie-set]: #cookiesetkey-value-options
 [cookie-get]: #cookiegetkeys
 [cookie-remove]: #cookieremovekeys
 [cookie-keys]: #cookiekeys
 [cookie-all]: #cookieall
 [cookie-clear]: #cookieclear
-[cookie-noconflict]: #
+[cookie-noconflict]: #cookienoconflict
 
 **Example:**
 
