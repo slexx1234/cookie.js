@@ -176,22 +176,18 @@ var Cookie = (function () {
     Cookie.clear = function () {
         return this.remove.apply(this, this.keys());
     };
-    Object.defineProperty(Cookie, "length", {
-        /**
-         * Getting length of all cookies
-         *
-         * @exaple
-         * Cookie.set({one: 1, two: 2});
-         *
-         * console.log(Cookie.length);
-         * // -> 2
-         */
-        get: function () {
-            return Cookie.keys().length;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    /**
+     * Getting length of all cookies
+     *
+     * @exaple
+     * Cookie.set({one: 1, two: 2});
+     *
+     * console.log(Cookie.getLength());
+     * // -> 2
+     */
+    Cookie.getLength = function () {
+        return Cookie.keys().length;
+    };
     /**
      * Exemption name Cookie
      *
@@ -207,7 +203,7 @@ var Cookie = (function () {
      * // -> 5
      */
     Cookie.noConflict = function () {
-        return Object.assign(Cookie);
+        return Cookie;
     };
     return Cookie;
 }());

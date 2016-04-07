@@ -196,10 +196,10 @@ class Cookie {
      * @exaple
      * Cookie.set({one: 1, two: 2});
      *
-     * console.log(Cookie.length);
+     * console.log(Cookie.getLength());
      * // -> 2
      */
-    public static get length(): number {
+    public static getLength(): number {
         return Cookie.keys().length;
     }
 
@@ -218,7 +218,7 @@ class Cookie {
      * // -> 5
      */
     public static noConflict(): Cookie {
-        return Object.assign(Cookie);
+        return Cookie;
     }
 }
 

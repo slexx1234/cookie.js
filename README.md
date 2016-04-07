@@ -9,16 +9,14 @@ tasty-cookies
 * [Browser Compatibility](#browser-compatibility)
 * [Use in CommonJS/Nodey](#use-in-commonjsnode)
 * [API Reference](#api-reference)
-    * [Properties](#properties-1)
-        * [Cookie.length][cookie-length]
-    * [Methods](#methods-1)
-        * [Cookie.set(key, value, [options])][cookie-set]
-        * [Cookie.get(keys...)][cookie-get]
-        * [Cookie.remove(keys...)][cookie-remove]
-        * [Cookie.keys()][cookie-keys]
-        * [Cookie.all()][cookie-all]
-        * [Cookie.clear()][cookie-clear]
-        * [Cookie.noConflict()][cookie-noconflict]
+    * [Cookie.set(key, value, [options])][cookie-set]
+    * [Cookie.get(keys...)][cookie-get]
+    * [Cookie.remove(keys...)][cookie-remove]
+    * [Cookie.keys()][cookie-keys]
+    * [Cookie.all()][cookie-all]
+    * [Cookie.clear()][cookie-clear]
+    * [Cookie.getLength()][cookie-getlength]
+    * [Cookie.noConflict()][cookie-noconflict]
 
 ### Quick start
 
@@ -53,11 +51,8 @@ var Cookie = require('tasty-cookies')(window);
 
 API Reference
 ----------------------------------------------------
-#### [Properties](#properties-1)
 
-* [Cookie.length][cookie-length]
-
-#### [Methods](#methods-1)
+### Methods
 
 * [Cookie.set(key, value, [options])][cookie-set]
 * [Cookie.get(keys...)][cookie-get]
@@ -65,15 +60,16 @@ API Reference
 * [Cookie.keys()][cookie-keys]
 * [Cookie.all()][cookie-all]
 * [Cookie.clear()][cookie-clear]
+* [Cookie.getLength()][cookie-getlength]
 * [Cookie.noConflict()][cookie-noconflict]
 
-[cookie-length]: #length
 [cookie-set]: #cookiesetkey-value-options
 [cookie-get]: #cookiegetkeys
 [cookie-remove]: #cookieremovekeys
 [cookie-keys]: #cookiekeys
 [cookie-all]: #cookieall
 [cookie-clear]: #cookieclear
+[cookie-getlength]: #cookie-getlength
 [cookie-noconflict]: #cookienoconflict
 
 **Example:**
@@ -98,28 +94,7 @@ console.log(Cookie.get('object'));
 // -> {one: 1, two: 2}
 ```
 
-### Properties
-
-#### length
-
-Getting length of all cookies
-
-[Source][cookie-length-src]
-
-**Example:**
-
-```js
-Cookie.set({one: 1, two: 2});
-
-console.log(Cookie.length);
-// -> 2
-```
-
-**Type:** Number
-
-### Methods
-
-#### Cookie.set(key, value, [options])
+### Cookie.set(key, value, [options])
 
 Set cookies
 
@@ -238,7 +213,7 @@ console.log(Cookie.get('one', 'two'));
 // -> {one: 1, two: 2}
 ```
 
-#### Cookie.remove(keys...)
+### Cookie.remove(keys...)
 
 Remove cookies
 
@@ -270,7 +245,7 @@ console.log(document.cookie)
 // -> ''
 ```
 
-#### Cookie.keys()
+### Cookie.keys()
 
 Getting all keys cookies
 
@@ -290,7 +265,7 @@ console.log(Cookie.keys());
 // -> ['one', 'two']
 ```
 
-#### Cookie.all()
+### Cookie.all()
 
 Getting all cookies
 
@@ -306,7 +281,7 @@ console.log(Cookie.all());
 // -> {one: 1, two: 2}
 ```
 
-#### Cookie.clear()
+### Cookie.clear()
 
 Clear all cookies
 
@@ -325,7 +300,24 @@ console.log(document.cookie);
 // -> ''
 ```
 
-#### Cookie.noConflict()
+### Cookie.getLength()
+
+Getting length of all cookies
+
+[Source][cookie-getlength-src]
+
+**Example:**
+
+```js
+Cookie.set({one: 1, two: 2});
+
+console.log(Cookie.getLength());
+// -> 2
+```
+
+**Return:** Number
+
+### Cookie.noConflict()
 
 Exemption name Cookie
 
@@ -347,12 +339,12 @@ console.log(Cookie2.get('my_cookie'));
 // -> 5
 ```
 
-[cookie-length-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L202
 [cookie-set-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L54
 [cookie-get-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L107
 [cookie-remove-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L138
 [cookie-keys-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L158
 [cookie-all-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L174
 [cookie-clear-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L189
+[cookie-getlength-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L202
 [cookie-noconflict-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L220
 
