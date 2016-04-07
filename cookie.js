@@ -192,6 +192,23 @@ var Cookie = (function () {
         enumerable: true,
         configurable: true
     });
+    /**
+     * Exemption name Cookie
+     *
+     * @example
+     * var Cookie2 = Cookie.noConflict();
+     *
+     * console.log(typeof Cookie2);
+     * // -> 'function'
+     *
+     * Cookie2.set('my_cookie', 5);
+     *
+     * console.log(Cookie2.get('my_cookie'));
+     * // -> 5
+     */
+    Cookie.noConflict = function () {
+        return Object.assign(Cookie);
+    };
     return Cookie;
 }());
 // AMD support

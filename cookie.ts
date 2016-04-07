@@ -202,6 +202,24 @@ class Cookie {
     public static get length(): number {
         return Cookie.keys().length;
     }
+
+    /**
+     * Exemption name Cookie
+     *
+     * @example
+     * var Cookie2 = Cookie.noConflict();
+     *
+     * console.log(typeof Cookie2);
+     * // -> 'function'
+     *
+     * Cookie2.set('my_cookie', 5);
+     *
+     * console.log(Cookie2.get('my_cookie'));
+     * // -> 5
+     */
+    public static noConflict(): Cookie {
+        return Object.assign(Cookie);
+    }
 }
 
 // AMD support

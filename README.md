@@ -19,6 +19,7 @@ tasty-cookies
         * [Cookie.keys()][cookie-keys]
         * [Cookie.all()][cookie-all]
         * [Cookie.clear()][cookie-clear]
+        * [Cookie.noConflict()][cookie-noconflict]
 
 ### Quick start
 
@@ -65,6 +66,7 @@ API Reference
 * [Cookie.keys()][cookie-keys]
 * [Cookie.all()][cookie-all]
 * [Cookie.clear()][cookie-clear]
+* [Cookie.noConflict()][cookie-noconflict]
 
 [cookie-length]: #
 [cookie-set]: #cookiesetkey-value-options
@@ -73,6 +75,7 @@ API Reference
 [cookie-keys]: #cookiekeys
 [cookie-all]: #cookieall
 [cookie-clear]: #cookieclear
+[cookie-noconflict]: #
 
 **Example:**
 
@@ -323,11 +326,34 @@ console.log(document.cookie);
 // -> ''
 ```
 
-[cookie-length-src]: 
-[cookie-set-src]: 
-[cookie-get-src]: 
-[cookie-remove-src]: 
-[cookie-keys-src]: 
-[cookie-all-src]: 
-[cookie-clear-src]: 
+#### Cookie.noConflict()
+
+Exemption name Cookie
+
+[Source][cookie-noconflict-src]
+
+**Return:** Cookie
+
+**Example:**
+
+```js
+var Cookie2 = Cookie.noConflict();
+
+console.log(typeof Cookie2);
+// -> 'function'
+
+Cookie2.set('my_cookie', 5);
+
+console.log(Cookie2.get('my_cookie'));
+// -> 5
+```
+
+[cookie-length-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L202
+[cookie-set-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L54
+[cookie-get-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L107
+[cookie-remove-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L138
+[cookie-keys-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L158
+[cookie-all-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L174
+[cookie-clear-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L189
+[cookie-noconflict-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L220
 

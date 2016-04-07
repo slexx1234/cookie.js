@@ -81,4 +81,13 @@
         assert.equal(Cookie.length, 2, 'Получение длинны кук');
         Cookie.clear();
     });
+
+    QUnit.test('Cookie.noConflict()', function (assert) {
+        var Cookie2 = Cookie.noConflict();
+        assert.equal(typeof Cookie2, 'function', 'Новое имя');
+
+        Cookie2.set('my_cookie', 5);
+        assert.equal(document.cookie, 'my_cookie=5', 'Установка куки');
+        Cookie2.clear();
+    });
 })();

@@ -19,6 +19,7 @@ tasty-cookies
         * [Cookie.keys()][cookie-keys]
         * [Cookie.all()][cookie-all]
         * [Cookie.clear()][cookie-clear]
+        * [Cookie.noConflict()][cookie-noconflict]
 
 ### Быстрый старт
 
@@ -66,6 +67,7 @@ var Cookie = require('tasty-cookies')(window);
 * [Cookie.keys()][cookie-keys]
 * [Cookie.all()][cookie-all]
 * [Cookie.clear()][cookie-clear]
+* [Cookie.noConflict()][cookie-noconflict]
 
 [cookie-length]: #
 [cookie-set]: #cookiesetkey-value-options
@@ -74,6 +76,7 @@ var Cookie = require('tasty-cookies')(window);
 [cookie-keys]: #cookiekeys
 [cookie-all]: #cookieall
 [cookie-clear]: #cookieclear
+[cookie-noconflict]: 
 
 **Пример:**
 
@@ -103,7 +106,7 @@ console.log(Cookie.get('object'));
 
 Получение колличества всего печенья
 
-[Код][cookie-length-src]
+[Исходный код][cookie-length-src]
 
 **Пример:**
 
@@ -122,7 +125,7 @@ console.log(Cookie.length);
 
 Добавление cookies
 
-[Код][cookie-set-src]
+[Исходный код][cookie-set-src]
 
 **Аргументы:**
 
@@ -211,7 +214,7 @@ console.log(document.cookie);
 
 Получение cookie
 
-[Код][cookie-get-src]
+[Исходный код][cookie-get-src]
 
 **Аргументы:**
 
@@ -241,7 +244,7 @@ console.log(Cookie.get('one', 'two'));
 
 Удаление cookies
 
-[Код][cookie-remove-src]
+[Исходный код][cookie-remove-src]
 
 **Аргументы:**
 
@@ -273,7 +276,7 @@ console.log(document.cookie)
 
 Получение всех ключей cookies
 
-[Код][cookie-keys-src]
+[Исходный код][cookie-keys-src]
 
 **Возвращает:** Array
 
@@ -293,7 +296,7 @@ console.log(Cookie.keys());
 
 Получение всех cookies
 
-[Код][cookie-all-src]
+[Исходный код][cookie-all-src]
 
 **Возвращает:** Object
 
@@ -309,7 +312,7 @@ console.log(Cookie.all());
 
 Удаление всех cookies
 
-[Код][cookie-clear-src]
+[Исходный код][cookie-clear-src]
 
 **Возвращает:** Cookie
 
@@ -324,10 +327,33 @@ console.log(document.cookie);
 // -> ''
 ```
 
-[cookie-length-src]: 
-[cookie-set-src]: 
-[cookie-get-src]: 
-[cookie-remove-src]: 
-[cookie-keys-src]: 
-[cookie-all-src]: 
-[cookie-clear-src]: 
+#### Cookie.noConflict()
+
+Освобождение имени Cookie
+
+[Исходный код][cookie-noconflict-src]
+
+**Возвращает:** Cookie
+
+**Пример:**
+
+```js
+var Cookie2 = Cookie.noConflict();
+
+console.log(typeof Cookie2);
+// -> 'function'
+
+Cookie2.set('my_cookie', 5);
+
+console.log(Cookie2.get('my_cookie'));
+// -> 5
+```
+
+[cookie-length-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L202
+[cookie-set-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L54
+[cookie-get-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L107
+[cookie-remove-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L138
+[cookie-keys-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L158
+[cookie-all-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L174
+[cookie-clear-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L189
+[cookie-noconflict-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L220
