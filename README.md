@@ -132,7 +132,7 @@ Set cookies
                 <tr>
                     <td>[expires]</td>
                     <td>Number</td>
-                    <td>Cookie expiration time</td>
+                    <td>Cookie expiration time (in days)</td>
                 </tr>
                 <tr>
                     <td>[path]</td>

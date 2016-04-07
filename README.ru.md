@@ -132,7 +132,7 @@ console.log(Cookie.get('object'));
                 <tr>
                     <td>[expires]</td>
                     <td>Number</td>
-                    <td>Время истечения cookie</td>
+                    <td>Время истечения cookie (в днях)</td>
                 </tr>
                 <tr>
                     <td>[path]</td>
