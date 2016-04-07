@@ -69,7 +69,7 @@ API Reference
 [cookie-keys]: #cookiekeys
 [cookie-all]: #cookieall
 [cookie-clear]: #cookieclear
-[cookie-getlength]: #cookie-getlength
+[cookie-getlength]: #cookiegetlength
 [cookie-noconflict]: #cookienoconflict
 
 **Example:**
