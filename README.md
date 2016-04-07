@@ -9,12 +9,16 @@ tasty-cookies
 * [Browser Compatibility](#browser-compatibility)
 * [Use in CommonJS/Nodey](#use-in-commonjsnode)
 * [API Reference](#api-reference)
-    * [Cookie.set(key, value, [options])][cookie-set]
-    * [Cookie.get(keys...)][cookie-get]
-    * [Cookie.remove(keys...)][cookie-remove]
-    * [Cookie.keys()][cookie-keys]
-    * [Cookie.all()][cookie-all]
-    * [Cookie.clear()][cookie-clear]
+    * [Properties]()
+        * [Cookie.length][cookie-length]
+    
+    * [Methods]()
+        * [Cookie.set(key, value, [options])][cookie-set]
+        * [Cookie.get(keys...)][cookie-get]
+        * [Cookie.remove(keys...)][cookie-remove]
+        * [Cookie.keys()][cookie-keys]
+        * [Cookie.all()][cookie-all]
+        * [Cookie.clear()][cookie-clear]
 
 ### Quick start
 
@@ -49,8 +53,11 @@ var Cookie = require('tasty-cookies')(window);
 
 API Reference
 ----------------------------------------------------
+#### [Properties]()
 
-#### Methods
+* [Cookie.length][cookie-length]
+
+#### [Methods]()
 
 * [Cookie.set(key, value, [options])][cookie-set]
 * [Cookie.get(keys...)][cookie-get]
@@ -59,6 +66,7 @@ API Reference
 * [Cookie.all()][cookie-all]
 * [Cookie.clear()][cookie-clear]
 
+[cookie-length]: #
 [cookie-set]: #cookiesetkey-value-options
 [cookie-get]: #cookiegetkeys
 [cookie-remove]: #cookieremovekeys
@@ -88,7 +96,28 @@ console.log(Cookie.get('object'));
 // -> {one: 1, two: 2}
 ```
 
-### Cookie.set(key, value, [options])
+### Properties
+
+#### length
+
+Getting length of all cookies
+
+[Source][cookie-length-src]
+
+**Example:**
+
+```js
+Cookie.set({one: 1, two: 2});
+
+console.log(Cookie.length);
+// -> 2
+```
+
+**Type:** Number
+
+### Methods
+
+#### Cookie.set(key, value, [options])
 
 Set cookies
 
@@ -177,7 +206,7 @@ console.log(document.cookie);
 // -> 'one=1; two=2'
 ```
 
-### Cookie.get(keys...)
+#### Cookie.get(keys...)
 
 Getting cookies
 
@@ -207,7 +236,7 @@ console.log(Cookie.get('one', 'two'));
 // -> {one: 1, two: 2}
 ```
 
-### Cookie.remove(keys...)
+#### Cookie.remove(keys...)
 
 Remove cookies
 
@@ -239,7 +268,7 @@ console.log(document.cookie)
 // -> ''
 ```
 
-### Cookie.keys()
+#### Cookie.keys()
 
 Getting all keys cookies
 
@@ -259,7 +288,7 @@ console.log(Cookie.keys());
 // -> ['one', 'two']
 ```
 
-### Cookie.all()
+#### Cookie.all()
 
 Getting all cookies
 
@@ -275,7 +304,7 @@ console.log(Cookie.all());
 // -> {one: 1, two: 2}
 ```
 
-### Cookie.clear()
+#### Cookie.clear()
 
 Clear all cookies
 
@@ -294,9 +323,11 @@ console.log(document.cookie);
 // -> ''
 ```
 
-[cookie-set-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L55
-[cookie-get-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L108
-[cookie-remove-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L141
-[cookie-keys-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L161
-[cookie-all-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L177
-[cookie-clear-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L192
+[cookie-length-src]: 
+[cookie-set-src]: 
+[cookie-get-src]: 
+[cookie-remove-src]: 
+[cookie-keys-src]: 
+[cookie-all-src]: 
+[cookie-clear-src]: 
+

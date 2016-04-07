@@ -23,8 +23,9 @@
  * console.log(Cookie.get('object'));
  * // -> {one: 1, two: 2}
  */
-var Cookie;
-(function (Cookie) {
+var Cookie = (function () {
+    function Cookie() {
+    }
     /**
      * Set cookies
      *
@@ -51,7 +52,7 @@ var Cookie;
      * console.log(document.cookie);
      * // -> 'one=1; two=2'
      */
-    function set(key, value, options) {
+    Cookie.set = function (key, value, options) {
         if (options === void 0) { options = {}; }
         if (typeof key === 'object') {
             for (var name in key) {
@@ -72,8 +73,7 @@ var Cookie;
                 (options.domain ? '; domain=' + options.domain : '') +
                 (options.secure ? '; secure' : '');
         return this;
-    }
-    Cookie.set = set;
+    };
     /**
      * Getting cookies
      *
@@ -90,7 +90,7 @@ var Cookie;
      * console.log(Cookie.get('one', 'two'));
      * // -> {one: 1, two: 2}
      */
-    function get() {
+    Cookie.get = function () {
         var keys = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             keys[_i - 0] = arguments[_i];
@@ -102,8 +102,7 @@ var Cookie;
             result[key] = matches ? JSON.parse(decodeURIComponent(matches[1])) : undefined;
         }
         return keys.length == 1 ? result[keys[0]] : result;
-    }
-    Cookie.get = get;
+    };
     /**
      * Remove cookies
      *
@@ -121,7 +120,7 @@ var Cookie;
      * console.log(document.cookie)
      * // -> ''
      */
-    function remove() {
+    Cookie.remove = function () {
         var keys = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             keys[_i - 0] = arguments[_i];
@@ -131,8 +130,7 @@ var Cookie;
             this.set(key, '', { expires: -1 });
         }
         return this;
-    }
-    Cookie.remove = remove;
+    };
     /**
      * Getting all keys cookies
      *
@@ -145,15 +143,14 @@ var Cookie;
      * console.log(Cookie.keys());
      * // -> ['one', 'two']
      */
-    function keys() {
+    Cookie.keys = function () {
         var keys = [];
         for (var _i = 0, _a = document.cookie.split('; '); _i < _a.length; _i++) {
             var cookie = _a[_i];
             keys.push(cookie.split('=')[0]);
         }
         return keys;
-    }
-    Cookie.keys = keys;
+    };
     /**
      * Getting all cookies
      *
@@ -162,10 +159,9 @@ var Cookie;
      * console.log(Cookie.all());
      * // -> {one: 1, two: 2}
      */
-    function all() {
+    Cookie.all = function () {
         return this.get.apply(this, this.keys());
-    }
-    Cookie.all = all;
+    };
     /**
      * Clear all cookies
      *
@@ -177,20 +173,36 @@ var Cookie;
      * console.log(document.cookie);
      * // -> ''
      */
-    function clear() {
+    Cookie.clear = function () {
         return this.remove.apply(this, this.keys());
-    }
-    Cookie.clear = clear;
-    // AMD support
-    if (typeof window['define'] === 'function') {
-        window['define'](function () {
-            return Cookie;
-        });
-    }
-    // CommonJS/Node support
-    if (typeof window['exports'] === 'object') {
-        window['exports']['Cookie'] = Cookie;
-    }
-})(Cookie || (Cookie = {}));
+    };
+    Object.defineProperty(Cookie, "length", {
+        /**
+         * Getting length of all cookies
+         *
+         * @exaple
+         * Cookie.set({one: 1, two: 2});
+         *
+         * console.log(Cookie.length);
+         * // -> 2
+         */
+        get: function () {
+            return Cookie.keys().length;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Cookie;
+}());
+// AMD support
+if (typeof window['define'] === 'function') {
+    window['define'](function () {
+        return Cookie;
+    });
+}
+// CommonJS/Node support
+if (typeof window['exports'] === 'object') {
+    window['exports']['Cookie'] = Cookie;
+}
 
 //# sourceMappingURL=cookie.js.map

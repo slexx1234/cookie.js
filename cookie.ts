@@ -23,7 +23,7 @@
  * console.log(Cookie.get('object'));
  * // -> {one: 1, two: 2}
  */
-namespace Cookie {
+class Cookie {
 
     /**
      * Set cookies
@@ -51,7 +51,7 @@ namespace Cookie {
      * console.log(document.cookie);
      * // -> 'one=1; two=2'
      */
-    export function set(
+    public static set(
         key:string|Object,
         value?:any,
         options: {
@@ -104,7 +104,7 @@ namespace Cookie {
      * console.log(Cookie.get('one', 'two'));
      * // -> {one: 1, two: 2}
      */
-    export function get(...keys:string[]):any {
+    public static get(...keys:string[]):any {
         var result = {};
 
         for (var key of keys) {
@@ -135,7 +135,7 @@ namespace Cookie {
      * console.log(document.cookie)
      * // -> ''
      */
-    export function remove(...keys:string[]) {
+    public static remove(...keys:string[]) {
         for (var key of keys) {
             this.set(key, '', {expires: -1});
         }
@@ -155,7 +155,7 @@ namespace Cookie {
      * console.log(Cookie.keys());
      * // -> ['one', 'two']
      */
-    export function keys():string[] {
+    public static keys():string[] {
         var keys = [];
         for (var cookie of document.cookie.split('; ')) {
             keys.push(cookie.split('=')[0]);
@@ -171,7 +171,7 @@ namespace Cookie {
      * console.log(Cookie.all());
      * // -> {one: 1, two: 2}
      */
-    export function all():Object {
+    public static all():Object {
         return this.get.apply(this, this.keys());
     }
 
@@ -186,19 +186,32 @@ namespace Cookie {
      * console.log(document.cookie);
      * // -> ''
      */
-    export function clear() {
+    public static clear() {
         return this.remove.apply(this, this.keys());
     }
 
-    // AMD support
-    if (typeof window['define'] === 'function') {
-        window['define'](function () {
-            return Cookie;
-        });
+    /**
+     * Getting length of all cookies
+     *
+     * @exaple
+     * Cookie.set({one: 1, two: 2});
+     *
+     * console.log(Cookie.length);
+     * // -> 2
+     */
+    public static get length(): number {
+        return Cookie.keys().length;
     }
+}
 
-    // CommonJS/Node support
-    if (typeof window['exports'] === 'object') {
-        window['exports']['Cookie'] = Cookie;
-    }
+// AMD support
+if (typeof window['define'] === 'function') {
+    window['define'](function () {
+        return Cookie;
+    });
+}
+
+// CommonJS/Node support
+if (typeof window['exports'] === 'object') {
+    window['exports']['Cookie'] = Cookie;
 }

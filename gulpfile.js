@@ -9,7 +9,9 @@ gulp.task('js', function() {
     gulp.src('./cookie.ts')
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(ts())
+        .pipe(ts({
+            target: 'ES5'
+        }))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./'));
 });

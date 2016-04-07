@@ -72,4 +72,13 @@
         Cookie.clear();
         assert.equal(document.cookie, '', 'Удаление всех');
     });
+
+    QUnit.test('Cookie.length', function (assert) {
+        Cookie.set({
+            one: 1,
+            two: 2
+        });
+        assert.equal(Cookie.length, 2, 'Получение длинны кук');
+        Cookie.clear();
+    });
 })();

@@ -9,12 +9,16 @@ tasty-cookies
 * [Совместимость с браузерами](#%D0%A1%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C-%D1%81-%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%B0%D0%BC%D0%B8)
 * [Использование в CommonJS/Node](#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-commonjsnode)
 * [Справочное руководство по API](#%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%BF%D0%BE-api)
-    * [Cookie.set(key, value, [options])][cookie-set]
-    * [Cookie.get(keys...)][cookie-get]
-    * [Cookie.remove(keys...)][cookie-remove]
-    * [Cookie.keys()][cookie-keys]
-    * [Cookie.all()][cookie-all]
-    * [Cookie.clear()][cookie-clear]
+    * [Свойства]()
+        * [Cookie.length][cookie-length]
+    
+    * [Методы]()
+        * [Cookie.set(key, value, [options])][cookie-set]
+        * [Cookie.get(keys...)][cookie-get]
+        * [Cookie.remove(keys...)][cookie-remove]
+        * [Cookie.keys()][cookie-keys]
+        * [Cookie.all()][cookie-all]
+        * [Cookie.clear()][cookie-clear]
 
 ### Быстрый старт
 
@@ -50,7 +54,11 @@ var Cookie = require('tasty-cookies')(window);
 Справочное руководство по API
 ----------------------------------------------------
 
-#### Методы
+#### [Свойства]()
+
+* [Cookie.length][cookie-length]
+
+#### [Методы]()
 
 * [Cookie.set(key, value, [options])][cookie-set]
 * [Cookie.get(keys...)][cookie-get]
@@ -59,6 +67,7 @@ var Cookie = require('tasty-cookies')(window);
 * [Cookie.all()][cookie-all]
 * [Cookie.clear()][cookie-clear]
 
+[cookie-length]: #
 [cookie-set]: #cookiesetkey-value-options
 [cookie-get]: #cookiegetkeys
 [cookie-remove]: #cookieremovekeys
@@ -88,7 +97,28 @@ console.log(Cookie.get('object'));
 // -> {one: 1, two: 2}
 ```
 
-### Cookie.set(key, value, [options])
+### Свойства
+
+#### length
+
+Получение колличества всего печенья
+
+[Код][cookie-length-src]
+
+**Пример:**
+
+```js
+Cookie.set({one: 1, two: 2});
+
+console.log(Cookie.length);
+// -> 2
+```
+
+**Тип:** Number
+
+### Методы
+
+#### Cookie.set(key, value, [options])
 
 Добавление cookies
 
@@ -177,7 +207,7 @@ console.log(document.cookie);
 // -> 'one=1; two=2'
 ```
 
-### Cookie.get(keys...)
+#### Cookie.get(keys...)
 
 Получение cookie
 
@@ -207,7 +237,7 @@ console.log(Cookie.get('one', 'two'));
 // -> {one: 1, two: 2}
 ```
 
-### Cookie.remove(keys...)
+#### Cookie.remove(keys...)
 
 Удаление cookies
 
@@ -239,7 +269,7 @@ console.log(document.cookie)
 // -> ''
 ```
 
-### Cookie.keys()
+#### Cookie.keys()
 
 Получение всех ключей cookies
 
@@ -259,7 +289,7 @@ console.log(Cookie.keys());
 // -> ['one', 'two']
 ```
 
-### Cookie.all()
+#### Cookie.all()
 
 Получение всех cookies
 
@@ -275,7 +305,7 @@ console.log(Cookie.all());
 // -> {one: 1, two: 2}
 ```
 
-### Cookie.clear()
+#### Cookie.clear()
 
 Удаление всех cookies
 
@@ -294,9 +324,10 @@ console.log(document.cookie);
 // -> ''
 ```
 
-[cookie-set-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L55
-[cookie-get-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L108
-[cookie-remove-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L141
-[cookie-keys-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L161
-[cookie-all-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L177
-[cookie-clear-src]: https://github.com/Alex5646/cookie.js/blob/master/cookie.ts#L192
+[cookie-length-src]: 
+[cookie-set-src]: 
+[cookie-get-src]: 
+[cookie-remove-src]: 
+[cookie-keys-src]: 
+[cookie-all-src]: 
+[cookie-clear-src]: 
